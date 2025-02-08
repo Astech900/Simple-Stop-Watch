@@ -44,7 +44,7 @@ function getTimes(){
 
     secondEl.innerHTML = s;
     
-    if(s >= 59){
+    if(s >= 60){
         s = 0;
         m++;
         m = (m < 10) ? "0" + m : m;
