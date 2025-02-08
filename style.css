@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background: #3C5B6F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container{
+    
+    width: 30rem;
+    padding: 1rem 7rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#2D3037;
+    color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+}
+@property --angle{
+   syntax: "<angle>";
+   initial-value: 0deg;
+   inherits: false;
+
+}
+.container::after,.container::before{
+    --angle:0deg;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle),transparent , rgb(53, 227, 250),#ee3572);
+    padding: 3px;
+    border-radius: 5px;
+    top: -1.2% ;
+    left: -0.55%;
+    z-index:-1;
+   animation: spin 2s linear infinite;
+}
+.container::before{
+    filter: blur(20px);
+    opacity: 0.7;
+
+
+}
+@keyframes spin {
+    from{
+        --angle:0deg;
+    }to{
+        --angle:360deg;
+    }
+}
+.container h3{
+    font-size: 3rem;
+    font-weight: 600;
+
+
+}
+.time-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0.5rem;
+    margin-top: 0.5rem;
+
+
+}
+.btn-container button{
+    padding: 1rem 1.3rem;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+   cursor: pointer;
+   background-color: #3C5B6F;
+    color: #fff;
+}
+.btn-container button i{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
